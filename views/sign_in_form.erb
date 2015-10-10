@@ -1,11 +1,14 @@
 
+<% content_for :title do %>
+	<title> Welcome to Humm! </title>
+<% end %> 
+
 <div id="sign_in_body">
 
 <div id="sign_in_page">
 
 <div id="opaque">
 	<form id="smiles"method="POST" action="/sign-in">
-			<!-- <h5>Sign In</h5> -->
 	<label for="email">Email</label> <br>
 	<input size="40" type="text" name="email" placeholder="Enter your email address."><br>
 	<label for="password">Password</label> <br>
@@ -20,16 +23,16 @@
 <!-- <div style="clear:both"></div> -->
 
 <div id="sign_up_section">
-<form id="sign_up" method="POST" action="/sign-up">
-	<label for="email">Email</label>
-	<input type="text" name="email"><br>
-<!-- 	<label for="fname">First Name</label><br>
-	<label for="lname">Last Name</label><br> -->
-	<label for="username">Username</label>
-	<input type="text" name="username"><br>
-	<label for="password">Password</label>
-	<input type="text" name="password"><br>
-	<input type="submit">
+	<form id="sign_up" method="POST" action="/sign-up">
+		<label for="email">Email</label>
+		<input type="text" name="email"><br>
+		<label for="fname">First Name</label><br>
+		<label for="lname">Last Name</label><br>
+		<label for="username">Username</label>
+		<input type="text" name="username"><br>
+		<label for="password">Password</label>
+		<input type="text" name="password"><br>
+		<input type="submit">
 	</form>
 </div>
 
