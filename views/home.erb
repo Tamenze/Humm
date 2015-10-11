@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 	<!-- post box -->
 
 	
@@ -77,3 +78,26 @@
 				</p>
 			</div>
 		</div>
+=======
+<div id="horatio">
+	<form id="humming"method="POST" action="/hummery">
+
+<textarea rows="4" cols="50" name="boxy" class="newhumm" form="humming" placeholder="Chime in!"> </textarea>
+<input type="submit">
+	</form>
+</div>
+
+
+<a href="/logout"></a>
+
+<button id="logout"type="button"><a href="/logout" id="logoutlink">Logout</a></button>
+
+
+ <div id="posty">
+<% Post.order(created_at: :desc).all.each do |p| %>
+<h1> <%= p.user.username %> </h1>
+<p> <%= p.body %> </p> 
+<p> <%= p.created_at%> </p>
+	<% end %>
+</div>  
+>>>>>>> master

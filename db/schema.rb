@@ -19,13 +19,14 @@ ActiveRecord::Schema.define(version: 20151008104524) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string  "body"
-    t.integer "user_id"
+    t.string   "body"
+    t.integer  "user_id"
+    t.datetime "created_at"
   end
 
   create_table "profiles", force: :cascade do |t|
     t.string   "bio"
-    t.datetime "lastupdated"
+    t.datetime "updated_on"
   end
 
   create_table "users", force: :cascade do |t|
