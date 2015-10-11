@@ -50,9 +50,9 @@ post "/sign-up" do
 	# erb :sign_in_form
 end
 
-get "/logout" do 
+get "/signout" do 
 	session[:user_id] = nil
-	flash[:info] = "You are now logged out"
+	flash[:info] = "You are now signed out"
 	redirect "/sign-in"
 end
 
@@ -78,7 +78,7 @@ end
   
 get "/myprofile" do
 	@posts = Post.where(user_id: session[:user_id])
-	erb :myprofile
+	erb :profile
 	#loads posts of the logged in user
 end
 
@@ -91,9 +91,9 @@ end
 
 
 
-get "/home" do
-	erb :home
-end
+# get "/home" do
+# 	erb :home
+# end
 
 post "/hummery" do
 	Post.create(body: params[:boxy], user_id: session[:user_id])
@@ -107,6 +107,11 @@ end
 # 	flash[:alert] = "Please create an account to view these hums."
 # 	end
 # end
+
+
+get "/settings" do 
+	erb :settings
+end
 
 
 
@@ -148,3 +153,4 @@ end
 
 # #same concept for javascript 
 # <% yield_content :js %> 
+
