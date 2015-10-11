@@ -82,6 +82,13 @@ get "/myprofile" do
 	#loads posts of the logged in user
 end
 
+get "/delete_account" do
+	@myaccount = User.where(user_id: session[:user_id])
+	@myaccount.destroy
+	flash[:alert] = "You have deleted your Humm account :("
+	redirect "/sign-in"
+end
+
 
 
 get "/home" do
@@ -100,6 +107,7 @@ end
 # 	flash[:alert] = "Please create an account to view these hums."
 # 	end
 # end
+
 
 
 
