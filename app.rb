@@ -76,7 +76,7 @@ get "/" do
 	# end	
 end
   
-get "/myprofile" do
+get "/profile" do
 	@posts = Post.where(user_id: session[:user_id])
 	erb :profile
 	#loads posts of the logged in user
@@ -108,13 +108,9 @@ end
 # 	end
 # end
 
-
 get "/settings" do 
 	erb :settings
 end
-
-
-
 
 	# if @posts.body.length >= 150
 	
@@ -136,6 +132,8 @@ end
 # get "/users" do
 # 	@users = User.all
 # end
+
+# =>  include option to sign up
 
 # on a specific page, you would put the following in: 
 # 	<% content_for :title, "this is the user title" %>

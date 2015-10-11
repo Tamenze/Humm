@@ -5,8 +5,9 @@
 	<% else %>
 		<title>Humm Along!</title>  
 	<% end %>
-		<link rel="stylesheet" type="text/css" href="home.css">
+
 		<link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="css" href="home.css">
 </head>
 <body>
 	<div id="navbar">	
@@ -17,8 +18,18 @@
 			<li><a href="/signout">Sign Out</a></li>
 		</ul>
 	</div>
-	 
-	<% if flash[:notice] %>
+
+<%  if content_for?(:title) %>
+	<%= yield_content :title %>
+<% else %>
+	<title>Humm Along!</title>  
+<% end %>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	 <% if flash[:notice] %>
+
 	     	<h1 class="flash-notice">
 	     		<%= flash[:notice] %>
 	   	 	</h1>
@@ -33,5 +44,6 @@
 
 <script type="text/javascript" src="main.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
 </body>
 </html>
