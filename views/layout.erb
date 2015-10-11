@@ -13,7 +13,27 @@
 			<li><a href="/signout">Sign Out</a></li>
 		</ul>
 	</div>
-<!-- 	flash notices, + end in yield form below -->
-	<%= yield %>
+
+<%  if content_for?(:title) %>
+	<%= yield_content :title %>
+<% else %>
+	<title>Humm Along!</title>  
+<% end %>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	 <% if flash[:notice] %>
+	     	<h1 class="flash-notice">
+	     		<%= flash[:notice] %>
+	   	 	</h1>
+  	<% end %>
+  <% if flash[:alert] %>
+		    <h1 class="flash-alert">
+		    	<%= flash[:alert] %>
+		    </h1>
+  <% end %>
+
+<%= yield %>
 </body>
 </html>
