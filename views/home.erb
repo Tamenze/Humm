@@ -1,4 +1,4 @@
-	<!-- post box -->
+<!-- post box -->
 
 	
 <div id="home_body">
@@ -82,16 +82,27 @@
 
 <div id="horatio">
 	<form id="humming"method="POST" action="/hummery">
-	<label for="textbox">Humm!</label> 
-	<input type="text" name="textbox"  placeholder="Chime in."><br> 
-	<input type="submit">
+
+<textarea rows="4" cols="50" name="boxy" class="newhumm" form="humming" placeholder="Chime in!"> </textarea>
+<input type="submit">
 	</form>
 </div>
 
-<div id="posty">
-<% @posts.each do |thing| %>
-<h1> <%= thing.body %> </h1> 
-<!-- pulls the value body of each post, could be something else: post.title or whatever if you had a title  -->
+
+<a href="/logout"></a>
+
+<button id="logout"type="button"><a href="/logout" id="logoutlink">Logout</a></button>
+
+
+ <div id="posty">
+<% Post.order(created_at: :desc).all.each do |p| %>
+<h1> <%= p.user.username %> </h1>
+<p> <%= p.body %> </p> 
+<p> <%= p.created_at%> </p>
 	<% end %>
+
 </div>
 <!-- if we want to order the posts by date, look up in the active record documentation -->
+=======
+</div>  
+
