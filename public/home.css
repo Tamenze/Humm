@@ -1,0 +1,89 @@
+/*css for home page*/
+#home_body{
+	background-image: url("images/gramaphone_3.jpg");
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
+	background-attachment: fixed;
+	opacity:.9;
+	padding:100px;
+	text-align: center;
+}
+
+.set_tings{
+	height: 100vh;
+}
+
+.textbox{
+	opacity: .3;
+}
+
+textarea{
+	resize:none;
+}
+
+li{
+	/*margin-top: 50px;*/
+	display: inline-block;
+	text-align: center;
+	padding: 10px;
+	word-spacing: 10px;
+	text-decoration: none;
+	color: rgb(0,0,0);
+
+}
+
+.container{
+	height: 15%;
+	width: 600px;
+	text-align: justify;
+	margin: 10px auto;
+	margin-top: 40px;
+	/*opacity: .3;*/
+	/*border: dashed;;
+	border-color: rgba(237,42,42,1);*/
+}
+
+.live_post{
+	background-color: rgba(49,189,127,.5);
+	/*opacity: .5;*/
+	color:rgb(0,0,0);
+	border-radius: 15px;
+	height: auto;
+}
+
+.account_form{
+	background-color: rgba(49,189,127,.5);
+	margin: auto;
+	margin-top: 60px;
+	width: 500px;
+}
+
+.profile_bar{
+	border: dashed;
+	float: left;
+	height: 500px;
+	width: 100px;
+}
+
+
+.profile_content{
+	border: dashed;
+}
+
+.footer{
+	border: dashed;
+}
+/*/*maybeuseless********************************/
+
+#navbar{
+/*	opacity: .5;*/
+
+}
+#navbar ul{
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+
+
