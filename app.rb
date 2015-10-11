@@ -12,3 +12,15 @@ set :database, "sqlite3:ourvinyl.sqlite3"
 # end
 
 # =>  include option to sign up
+
+get "/home" do 
+	erb :home
+end
+
+get "/settings" do 
+	erb :settings
+end
+
+get "/profile" do
+	erb :profile
+end
