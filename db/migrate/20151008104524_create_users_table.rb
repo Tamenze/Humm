@@ -10,10 +10,11 @@ class CreateUsersTable < ActiveRecord::Migration
   	create_table :posts do |t|
   		t.string :body
   		t.integer :user_id
+      t.timestamp :created_at
  	end
  	create_table :profiles do |t|
  		t.string :bio
- 		t.datetime :lastupdated
+ 		t.timestamp :updated_on
  	end
  	create_table :follows do |t|
  		t.integer :follower_id

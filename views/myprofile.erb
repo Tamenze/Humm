@@ -1,0 +1,6 @@
+<% @posts.each do |thing| %>
+<h3> <%= thing.user.username %> </h3>
+<p> <%= thing.body %> </p> 
+
+<!-- pulls the value body of each post, could be something else: post.title or whatever if you had a title  -->
+	<% end %>
