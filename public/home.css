@@ -15,22 +15,25 @@
 
 .textbox{
 	opacity: .3;
+/*	text-align: center;*/
 }
 
-textarea{
+/*textarea{
 	resize:none;
-}
+}*/
 
 li{
-	/*margin-top: 50px;*/
 	display: inline-block;
 	text-align: center;
 	padding: 10px;
-	word-spacing: 10px;
+/*	word-spacing: 10px;*/
 	text-decoration: none;
-	color: rgb(0,0,0);
-
 }
+
+#nav:link, #nav:visited, #nav:active{
+	text-decoration: none;
+	color: black;
+ }
 
 .container{
 	height: 15%;
@@ -149,10 +152,6 @@ li{
 	background-color: blue;
 	color: white;
 	border: 1px solid red;
-}
-
-#horatio{
-	text-align: center;
 }
 
 #mine{

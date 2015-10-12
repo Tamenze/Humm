@@ -1,6 +1,19 @@
+<% content_for :title do %>
+	<title> Your Humm Account Settings </title>
+<% end %> 
 
 <div id="home_body" class="set_tings">
-	
+		<div id="navbar">	
+		<ul>
+			<li><a href="/home" id="nav">Home</a></li>
+			<li><a href="/profile" id="nav">Profile</a></li>
+			<li><a href="/settings" id="nav">Settings</a></li>
+			<li><a href="/signout" id="nav"><span>Sign Out</span></a></li>
+		</ul>
+	</div>
+
+<button id="delete_account"type="button"><a href="/delete_account" id="deletelink">Delete My Account</a></button>
+
 
 	<div class="account_form">
 		<form>

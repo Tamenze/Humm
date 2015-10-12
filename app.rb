@@ -9,7 +9,7 @@ require "rack-flash"
 set :database, "sqlite3:ourvinyl.sqlite3"
 enable :sessions
 use Rack::Flash, sweep: true
-# set :sessions, true
+set :sessions, true
 
 
 #a session allows you to associate info with each individual user of your application
@@ -56,15 +56,6 @@ get "/signout" do
 	redirect "/sign-in"
 end
 
-
-
-def current_user
-	if session[:user_id]
-	@current_user = User.find(session[:user_id])
-	end
-end
-
-
 get "/" do
 	if session[:user_id]
 		erb :home
@@ -78,6 +69,7 @@ end
   
 get "/profile" do
 	@posts = Post.where(user_id: session[:user_id])
+	@profile = Profile.where(user_id: session[:user_id])
 	erb :profile
 	#loads posts of the logged in user
 end
@@ -89,16 +81,57 @@ get "/delete_account" do
 	redirect "/sign-in"
 end
 
-
-
-# get "/home" do
-# 	erb :home
-# end
+get "/home" do
+	erb :home
+end
 
 post "/hummery" do
 	Post.create(body: params[:boxy], user_id: session[:user_id])
 	redirect "/home"
 end
+
+get "/users/all" do
+	@users = User.all
+	erb :users
+end
+
+get "/followees" do
+	@users = current_user.followees
+	erb :users
+end
+
+get "/followers" do
+	@users = current_user.followers.
+	erb :followers
+end
+
+get "/users/:followee_id/follow" do
+	Follow.create(follower_id: session[:user_id], followee_id: params[:followee_id])
+	redirect "/users/all"
+end
+
+get "/users/:followee_id/unfollow" do
+	@follow = Follow.where(follower_id: session[:user_id], followee_id: params[:followee_id]).first
+	@follow.destroy
+	redirect "/users/all"
+end
+
+def current_user
+	if session[:user_id]
+	@current_user = User.find(session[:user_id])
+	end
+end
+
+get "/settings" do 
+	erb :settings
+end
+
+get "/update_my_account" do
+	@user_id = @current_user.user_id
+	User.update(@user_id, username:params[:newusername], password: params[:newpassword])
+	redirect "/settings"
+end
+
 # get "/public" do
 # 	if session[:user_id]
 # 			@posts = Post.all
@@ -108,9 +141,6 @@ end
 # 	end
 # end
 
-get "/settings" do 
-	erb :settings
-end
 
 	# if @posts.body.length >= 150
 	
