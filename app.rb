@@ -7,7 +7,7 @@ require 'bundler/setup'
 require "rack-flash"
 enable :sessions
 
-configure(:development){set :database, "sqlite3:ourvinyl.sqlite3"}
+set :database, "sqlite3:ourvinyl.sqlite3"
 use Rack::Flash, sweep: true
 set :sessions, true
 #a session allows you to associate info with each individual user of your application
@@ -82,19 +82,11 @@ end
 
 
 
-# get "/profile" do
-#   @posts = Post.where(user_id: session[:user_id]).order(created_at: :desc)
-#   @current_user = User.find(session[:user_id])
-#   erb :profile
-# end
-
-################
-#temporary testing in class
-get "/profile/:user_id" do
-@user = User.where(id :params[:user_id]).first
-erb :profile
+get "/profile" do
+  @posts = Post.where(user_id: session[:user_id]).order(created_at: :desc)
+  @current_user = User.find(session[:user_id])
+  erb :profile
 end
-#####
 
 get "/allhumms" do
 	@posts = Post.order(created_at: :desc).all
