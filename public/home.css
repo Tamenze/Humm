@@ -200,3 +200,8 @@ li{
 	font-size: 20px;
 
 }
+
+#nodec:link,#nodec:visited, #nodec:active {
+	text-decoration: none;
+	color: black;
+}

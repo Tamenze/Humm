@@ -12,12 +12,10 @@
 			<li><a href="/signout" id="nav"><span>Sign Out</span></a></li>
 		</ul>
 	</div>		
-
-
 	
 	<div>
 		<p id="prof_bio">
-		<span id="prof_username"><%= @current_user.username%></span><br><span id="loves"> loves </span><br><%= @current_user.profile.bio %> </p>
+		<span id="prof_username"><%= @user.username%></span><br><span id="loves"> loves </span><br><%= @user.profile.bio %> </p>
 	</div>
 
 	<div class="container">

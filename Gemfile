@@ -8,4 +8,5 @@ gem "sqlite3"
 gem "rake"
 gem "sinatra-contrib"
 gem "rack-flash3"
+gem 'pry'
 

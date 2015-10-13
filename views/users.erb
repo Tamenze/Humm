@@ -6,8 +6,9 @@
 <div id="navbar">	
 		<ul>
 			<li><a href="/home" id="nav">Home</a></li>
-			<li><a href="/profile" id="nav">Profile</a></li>
+			<li><a href="/profile" id="nav">My Profile</a></li>
 			<li><a href="/allhumms" id="nav"> All Humms</a></li>
+			<li><a href="/users_all" id="nav"> All Chimers</a></li>
 			<li><a href="/settings" id="nav">Settings</a></li>
 			<li><a href="/signout" id="nav"><span>Sign Out</span></a></li>
 		</ul>
@@ -15,10 +16,11 @@
 <div class="container">
 		<div class="live_post">
 			<% @users.each do |u|  %>
-			<h1>  <%= u.username %> </h1> <br>
-			<button type="button"><a href="users/:followee_id/follow">Follow</a></button>
-			<button type="button"><a href="users/:followee_id/unfollow">Unfollow</a></button>
+			<h1> <a href="/users/<%= u.id %>/posts" id="nodec"><%= u.username %></a> </h1> <br>
+			<button type="button"><a href="users/<%= u.id %>/follow">Follow</a></button>
+			<button type="button"><a href="users/<%= u.id %>/unfollow">Unfollow</a></button>
 			<hr>
+
 				<% end %>
 
 				
