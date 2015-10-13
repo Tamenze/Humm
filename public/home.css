@@ -53,10 +53,12 @@ li{
 }
 
 .live_post{
-	background-color: rgba(49,189,127,.5);
+/*	background-color: rgba(49,189,127,.5);
 	color:rgb(0,0,0);
-	border-radius: 15px;
+	border-radius: 15px;*/
 	height: auto;
+	background-color: rgba(16,17,64,.3);
+    border-radius: 20px;
 }
 
 #prof_username{

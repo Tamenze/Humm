@@ -7,7 +7,7 @@ require 'bundler/setup'
 require "rack-flash"
 enable :sessions
 
-set :database, "sqlite3:ourvinyl.sqlite3"
+configure(:development){set :database, "sqlite3:ourvinyl.sqlite3"}
 use Rack::Flash, sweep: true
 set :sessions, true
 #a session allows you to associate info with each individual user of your application
@@ -56,12 +56,12 @@ get "/signout" do
 end
 #end of sign in/up/out options
 
-
 # def current_user
 # 	if session[:user_id]
 # 	@current_user = User.find(session[:user_id])
 # 	end
 # end
+
   
 #Home Route is the page where users can post and see all users' posts
 get "/home" do
@@ -81,11 +81,20 @@ end
 #end of Home routes
 
 
-get "/profile" do
-  @posts = Post.where(user_id: session[:user_id]).order(created_at: :desc)
-  @current_user = User.find(session[:user_id])
-  erb :profile
+
+# get "/profile" do
+#   @posts = Post.where(user_id: session[:user_id]).order(created_at: :desc)
+#   @current_user = User.find(session[:user_id])
+#   erb :profile
+# end
+
+################
+#temporary testing in class
+get "/profile/:user_id" do
+@user = User.where(id :params[:user_id]).first
+erb :profile
 end
+#####
 
 get "/allhumms" do
 	@posts = Post.order(created_at: :desc).all

@@ -16,7 +16,7 @@
 		<div class="live_post">
 			<p>
 				<% @posts.each do |p| %>
-				<h1> <%= p.user.username %> </h1>
+				<h1><a href="/profile/:user_id"> <%= p.user_id %></a>  </h1>
 				<p> <%= p.body %> </p> 
 				<p> <%= p.created_at%> </p>
 				<hr>
