@@ -13,8 +13,9 @@ class CreateUsersTable < ActiveRecord::Migration
       t.timestamp :created_at
  	end
  	create_table :profiles do |t|
+    t.integer :user_id
  		t.string :bio
- 		t.timestamp :updated_on
+    t.timestamp :updated_on
  	end
  	create_table :follows do |t|
  		t.integer :follower_id

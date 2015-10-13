@@ -1,8 +1,15 @@
 $(document).ready(function(){ 
 
-var div = document.getElementById(".newHumm");
+$("#sam").click(function(){
+	$("#sign_up_section").toggle();
+});
 
-
+window.onload = function changey(){
+for (i=0;i<6;i++){ 
+    x="live_post"+i; 
+ document.getElementById(x).innerHTML="New thing";
+}
+};
 
 // function addNewHumm(){
 // 	var newHummText=$("#newHumm").val();
@@ -17,9 +24,9 @@ var div = document.getElementById(".newHumm");
 // 	return newHumm;  
 // }
 
-$('.button').on('click', function () {
-    console.log("hre");
-    $('#posty').prepend(div);
-    });
+// $("#chime").on('click', function () {
+//     console.log("hre");
+//     $('#posty').prepend(div);
+//     });
 
 });

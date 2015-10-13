@@ -7,40 +7,30 @@
 		<ul>
 			<li><a href="/home" id="nav">Home</a></li>
 			<li><a href="/profile" id="nav">Profile</a></li>
+			<li><a href="/allhumms" id="nav"> All Humms</a></li>
 			<li><a href="/settings" id="nav">Settings</a></li>
 			<li><a href="/signout" id="nav"><span>Sign Out</span></a></li>
 		</ul>
+	</div>		
+
+
+	
+	<div>
+		<p id="prof_bio">
+		<span id="prof_username"><%= @current_user.username%></span><br><span id="loves"> loves </span><br><%= @current_user.profile.bio %> </p>
 	</div>
 
-<h1> <%= @profile.user.username %> </h1>
-<p> <%= @profile.bio %> </p> 
-
-<!-- 
-	<div id="profile_bar">
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	<div class="container">
+		<div class="live_post">
+			<p>
+				<% @posts.each do |p| %>
+				<p> <%= p.body %> </p> 
+				<p> <%= p.created_at%> </p>
+				<hr>
+					<% end %>
+			</p>
+		</div>
 	</div>
-
-	<div id="profile_content">
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		</p>
-	</div> -->
-
-<div id="profile_content">
-<% @posts.each do |thing| %>
-<h1> <%= p.user.username %> </h1>
-<p> <%= p.body %> </p> 
-<p> <%= p.created_at%> </p>
-	<% end %>
-</div>
-
 
 
 

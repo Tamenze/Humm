@@ -1,5 +1,5 @@
 <% content_for :title do %>
-	<title> Chime In :-) </title>
+	<title> The Humm </title>
 <% end %> 
 
 <div id="home_body">
@@ -12,18 +12,7 @@
 			<li><a href="/signout" id="nav"><span>Sign Out</span></a></li>
 		</ul>
 	</div>
-
-
-	<div class="textbox">
-		<form id="humming"method="POST" action="/hummery">
-			<textarea rows="7" cols="75" maxlength="150" name="boxy" class="newhumm" form="humming" placeholder="Chime in!"> </textarea>
-		<input type="submit" value="Submit" id ="chime" onclick="changeText()"> 
-		</form>
-	</div>
-
-
-<!-- this is where the active post would be located -->
-	<div class="container">
+<div class="container">
 		<div class="live_post">
 			<p>
 				<% @posts.each do |p| %>

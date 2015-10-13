@@ -1,0 +1,23 @@
+<% content_for :title do %>
+	<title> All Hummers </title>
+<% end %> 
+
+<div id="home_body" class="set_tings">
+		<div id="navbar">	
+		<ul>
+			<li><a href="/home" id="nav">Home</a></li>
+			<li><a href="/profile" id="nav">Profile</a></li>
+			<li><a href="/allhumms" id="nav"> All Humms</a></li>
+			<li><a href="/settings" id="nav">Settings</a></li>
+			<li><a href="/signout" id="nav"><span>Sign Out</span></a></li>
+		</ul>
+		</div>
+
+	<% @users.each do |u|  %>
+	<h1> <a href="/users/:followee_id/follow"> Follow <%= u.username %>  </a>  <h1>
+	<h1> <a href="/users/:followee_id/unfollow"> Unfollow <%= u.username %>  </a>  <h1>
+		<% end %>
+
+
+<a href="/followers">Who Follows Me</a>
+</div>

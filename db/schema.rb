@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20151008104524) do
   end
 
   create_table "profiles", force: :cascade do |t|
+    t.integer  "user_id"
     t.string   "bio"
     t.datetime "updated_on"
   end

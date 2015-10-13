@@ -9,25 +9,36 @@
 	text-align: center;
 }
 
+.flash {
+	color: green;
+	padding: 10px;
+}
+
 .set_tings{
 	height: 100vh;
 }
 
 .textbox{
-	opacity: .3;
-/*	text-align: center;*/
+	opacity: .7;
+	margin-top: 50px;
 }
 
-/*textarea{
-	resize:none;
-}*/
+.newhumm{
+	font: black;
+	font-weight: bold;
+	font-size: 12px;
+}
 
 li{
 	display: inline-block;
 	text-align: center;
 	padding: 10px;
-/*	word-spacing: 10px;*/
 	text-decoration: none;
+	font-size: 24px;
+	border: 1px solid black;
+	border-radius: 20px;
+	position: relative;
+	right: 20px;
 }
 
 #nav:link, #nav:visited, #nav:active{
@@ -36,23 +47,37 @@ li{
  }
 
 .container{
-	height: 15%;
+	height: auto;
 	width: 600px;
 	text-align: justify;
 	margin: 10px auto;
 	margin-top: 40px;
-	/*opacity: .3;*/
-	/*border: dashed;;
-	border-color: rgba(237,42,42,1);*/
 }
 
 .live_post{
 	background-color: rgba(49,189,127,.5);
-	/*opacity: .5;*/
 	color:rgb(0,0,0);
 	border-radius: 15px;
 	height: auto;
 }
+
+#prof_username{
+	font-size: 55px;
+	color: purple;
+	font-weight: bold;
+}
+#loves{
+	color: #A1F0D3;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+#prof_bio{
+	font-size: 25px;
+	color: #102B4C;
+	font-weight: bold;
+}
+
 
 .account_form{
 	background-color: rgba(49,189,127,.5);
@@ -61,27 +86,10 @@ li{
 	width: 500px;
 }
 
-.profile_bar{
-	border: dashed;
-	float: left;
-	height: 500px;
-	width: 100px;
-}
-
-
-.profile_content{
-	border: dashed;
-}
-
 .footer{
 	border: dashed;
 }
-/*/*maybeuseless********************************/
 
-#navbar{
-/*	opacity: .5;*/
-
-}
 #navbar ul{
 	text-align: center;
 	margin-top: 0px;
@@ -104,7 +112,7 @@ li{
 	border: 5px solid black;
 	border-radius: 10px 10px;
 	position: relative;
-	top: 35px;
+	top: 25px;
 }
 
 #opaque{
@@ -116,6 +124,8 @@ li{
 	margin: 0 auto;
 	border-radius: 5px;
 }
+
+
 
 #smiles{
 	padding: 10px;
@@ -143,9 +153,26 @@ li{
  }
 
 #sign_up{
-	background-color: rgba(152,152,152,.2);
+	background-color: rgba(152,152,152,.8);
 	width: 350px;
 	height: 250px;
+	position: fixed;
+	left: 484px;
+	bottom: 158px;
+	text-align: right;
+}
+
+#info{
+	text-align: center;
+	color: black;
+	font-size: 20px;
+}
+
+#large{
+	font-weight: bold;
+}
+#now{
+	text-align: center;
 }
 
 #posty{
@@ -158,3 +185,15 @@ li{
 	background-color: green;
 }
 
+#delete_account{
+	margin-top: 100px;
+	border-radius: 5px;
+	background-color: black;
+}
+
+#deletelink:link, #deletelink:visited, #deletelink:active {
+	text-decoration: none;
+	color: red;
+	font-size: 20px;
+
+}
