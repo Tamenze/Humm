@@ -94,7 +94,7 @@ end
 ##########
 
 
-get "/users/all" do
+get "/users_all" do
 	@users = User.all
 	erb :users
 end
