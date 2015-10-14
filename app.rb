@@ -26,12 +26,11 @@ end
 
 #Options to sign in, sign up, and sign out
 get "/sign-in" do 
-	erb :sign_in_form
+	erb :sign_in_form 
 end
 
 post "/sign-in" do
 	@user = User.where(email: params[:email]).first
-	
 	if @user && @user.password == params[:password]
 		session[:user_id]=@user.id 
 		flash[:notice] = "Successful Login" #to be changed
