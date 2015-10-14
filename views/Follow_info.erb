@@ -17,7 +17,7 @@
 <div id="followees">
 <h1> People Who You Follow:</h1>
 <% @followees.each do |followee| %>
-    <h2><strong>Id:</strong> <%= followee.id %></h2>
+    <h2><strong>Id:</strong> <%= followee.username %></h2>
     <li><strong>Email:</strong> <%= followee.email %></li>
   <% end %>
 </div>
@@ -25,8 +25,8 @@
 <div id="followers">
 <h1> Your Followers:</h1>
 <% @followers.each do |follower| %>
-    <h2><strong>Id:</strong> <%= follower.id %></h2>
-    <li><strong>Email:</strong> <%= follower.user.email %></li>
+    <h2><strong>Id:</strong> <%= follower.username %></h2>
+    <li><strong>Email:</strong> <%= follower.email %></li>
   <% end %>
 </div>
 

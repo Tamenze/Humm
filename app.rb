@@ -119,6 +119,7 @@ end
 
 get "/follow_info" do
 	@current_user = User.find(session[:user_id])
+
 	if @current_user.followees	 
 	@followees = @current_user.followees
 	else
