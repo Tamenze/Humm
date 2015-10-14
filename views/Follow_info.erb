@@ -1,0 +1,33 @@
+<% content_for :title do %>
+	<title> Follow Info </title>
+<% end %> 
+
+<div id="home_body">
+<div id="navbar">	
+		<ul>
+			<li><a href="/home" id="nav">Home</a></li>
+			<li><a href="/profile" id="nav">My Profile</a></li>
+			<li><a href="/allhumms" id="nav"> All Humms</a></li>
+			<li><a href="/users_all" id="nav"> All Chimers</a></li>
+			<li><a href="/settings" id="nav">Settings</a></li>
+			<li><a href="/signout" id="nav"><span>Sign Out</span></a></li>
+		</ul>
+		</div>
+
+<div id="followees">
+<h1> People Who You Follow:</h1>
+<% @followees.each do |followee| %>
+    <h2><strong>Id:</strong> <%= followee.id %></h2>
+    <li><strong>Email:</strong> <%= followee.email %></li>
+  <% end %>
+</div>
+
+<div id="followers">
+<h1> Your Followers:</h1>
+<% @followers.each do |follower| %>
+    <h2><strong>Id:</strong> <%= follower.id %></h2>
+    <li><strong>Email:</strong> <%= follower.user.email %></li>
+  <% end %>
+</div>
+
+</div>

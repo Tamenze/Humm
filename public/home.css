@@ -102,7 +102,7 @@ li{
 #sign_in_body{
 	background-color: black;
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 }
 
 #sign_in_page{
@@ -156,13 +156,14 @@ li{
  }
 
 #sign_up{
-	background-color: rgba(152,152,152,.8);
+	background-color: rgba(152,152,152,.9);
 	width: 350px;
-	height: 250px;
+	height: 295px;
 	position: fixed;
-	left: 484px;
+	left: 468px;
 	bottom: 158px;
 	text-align: right;
+	border-radius: 10px;
 }
 
 #info{

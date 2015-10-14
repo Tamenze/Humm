@@ -113,47 +113,52 @@ get "/users/:id/posts" do
 @posts = Post.where(user_id: params[:id]).order(created_at: :desc)
 
 @user = User.where(id: params[:id]).first
-# binding.pry
 erb :profile
 end
 
 
 
-# 	@thisuser = User.where(user)
+get "/follow_info" do
+	@current_user = User.find(session[:user_id])
+	if @current_user.followees	 
+	@followees = @current_user.followees
+	else
+	"You are not following anyone."
+	end
+	if @current_user.followers
+	@followers = @current_user.followers
+	else
+	"You do not have any followers."
+	end
+	erb :Follow_info
+end
 
-# get "/users/:id/posts" do
-# 	@user = User.find(params[:id])
-
-# 	#whatever page you want it to load, ex
-# 	erb :home
+# get "/followers" do
+# 	@current_user = User.find(session[:user_id])
+# 	if @current_user.followers
+# 	@followers = @current_user.followers
+# 	else
+# 	"You do not have any followers."
+# 	end
+# 	erb :Follow_info
 # end
-
-
-
-get "/followees" do
-	@current_user = User.find(session[:user_id])
-	@users = current_user.followees
-	erb :users
-end
-
-get "/followers" do
-	@current_user = User.find(session[:user_id])
-	@users = @current_user.followers
-	erb :followers
-end
 
 get "/users/:followee_id/follow" do
 	Follow.create(follower_id: session[:user_id], followee_id: params[:followee_id])
-	redirect "/users/all"
+	redirect "/follow_info"
 end
 
 get "/users/:followee_id/unfollow" do
 	@follow = Follow.where(follower_id: session[:user_id], followee_id: params[:followee_id]).first
 	@follow.destroy
-	redirect "/users/all"
+	redirect "/follow_info"
 end
 
+# get "/follow_info" do
+# 	erb :follow_info
+# end
 
+#####
 
 
 #Settings Page (options to update and delete)
