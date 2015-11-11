@@ -17,6 +17,12 @@
 	<div>
 		<p id="prof_bio">
 		<span id="prof_username"><%= @user.username%></span><br><span id="loves"> loves </span><br><%= @user.profile.bio %> </p>
+		<% if current_user.id == @user.id %>
+		<p><strong>My Email: </strong><%= @user.email%></p>
+		<p><strong>My Chimer ID: </strong><%= @user.username%></p>
+		<p><strong>My Password: </strong><%= @user.password%></p>
+		<% end %>
+
 	</div>
 
 	<div class="container">

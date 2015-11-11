@@ -13,16 +13,17 @@
 			<li><a href="/signout" id="nav"><span>Sign Out</span></a></li>
 		</ul>
 		</div>
-<div class="container">
+<div class="all_users">
 		<div class="live_post">
 			<% @users.each do |u|  %>
 			<h1> <a href="/users/<%= u.id %>/posts" id="nodec"><%= u.username %></a> </h1> <br>
-			<button type="button"><a href="users/<%= u.id %>/follow">Follow</a></button>
-			<button type="button"><a href="users/<%= u.id %>/unfollow">Unfollow</a></button>
+			<% if current_user.followees.where(follows: { followee_id: u.id }).empty? %>
+			<button type="button"><a href="users/<%= u.id %>/follow" id="nodec">Follow</a></button>
+			<% else %>
+			<button type="button"><a href="users/<%= u.id %>/unfollow" id="nodec">Unfollow</a></button>
+			<%end%>
 			<hr>
-			<% end %>
-
-				
+			<% end %>	
 			</p>
 		</div>
 	</div>

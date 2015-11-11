@@ -17,8 +17,6 @@ set :sessions, true
 def current_user
 	if session[:user_id]
 	@current_user = User.find(session[:user_id])
-	else 
-	nil
 	end
 end
 
@@ -91,7 +89,10 @@ end
 
 get "/profile" do
   @posts = Post.where(user_id: session[:user_id]).order(created_at: :desc)
-  @user = User.find(session[:user_id])
+  # @user = User.find(session[:user_id])
+  @user = current_user
+  # @LOOKEDAT = Post.where(user_id: session[:user_id]).user.id
+  # if @user_id = User.find(session[:user_id]).id
 
   erb :profile
 end

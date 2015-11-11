@@ -7,8 +7,6 @@ class User < ActiveRecord::Base
 	has_many :followees, through: :followings, class_name: User #passive
 end
 
-# https://github.com/orlandocaraballo/wdi-fall-2015-nyc/blob/master/examples-from-class/oct-10/models.rb 
-
 class Post < ActiveRecord::Base
 	belongs_to :user
 end
